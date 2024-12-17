@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>Inscrie-te la curs - Matematica</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html"><img id="logo-link" src="../images/logo-link.png"></a>
+            <a href="inscrieri.html">Înscrieri</a>
+            <a href="materiale.html">Materiale</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inscrieri-section">
+            <div class="section-div">
+
+                <div class="container index-info">
+                    <h1 data-aos="fade-up"></h1>Inscrie-te la curs</h1>
+                    <h2>Descopera frumusetea matematicii !</h2>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="container">
+
+            <h1 data-aos="fade-up">Esti la un click distanta pentru inscriere</h1>
+            <div class="inscriere-info">
+
+                <div class="card-inscriere" data-aos="fade-up">
+                    <h2>Profesorul cursului</h2>
+
+                    <div class="profesor">
+                        <img src="../images/poza.jpg" >
+                        <p>
+                        Profesorul acestui curs este Hurciuc Liliana, profesor de Matematica si Informatica din
+                        gimnaziul "Vasile Badiu", s.Borogani, r.Leova, cu un stagiu pedagogic de 20 de ani.
+                        </p>
+                    </div>
+                    <br/>
+                    <b>E-mail: </b> <a href="mailto:lilianahurciuc@gmail.com">lilianahurciuc@gmail.com</a>
+                </div>
+
+                <div class="card-inscriere" data-aos="fade-up">
+                    <h2>Completeaza formularul</h2>
+                    <form id="formular" action="https://sheetdb.io/api/v1/92l3ks5k1yo0w" method="post">
+                          <label for="nume">Nume, prenume</label>
+                            <input required class="input-form" id="nume" name="data[nume]" type="text">
+
+                            <label for="email">Email</label>
+                            <input required class="input-form" id="email"name="data[email]" type="email">
+                            <label>Clasa</label>
+                            <br/>
+                            <select class="select-form" name="data[clasa]">
+                                <option value="V">V</option>                          
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
+                                <option value="VIII">VIII</option>
+                                <option value="IX">IX</option>
+                            </select>
+                            <select class="select-form" name="data[litera]">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                            </select>
+                            <input type="submit" value="Transmite" id="transmite">
+                    </form>
+                </div>
+
+            </div>
+            <div>
+                <h2>Ai o întrebare? </h2>
+                <div class="fb-comments" data-href="http://tekwill.online/hurciuc-liliana"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>Hurciuc Liliana - 2024 ©</h3>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        var form = document.getElementById('formular');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("formular")),
+            }).then(() =>{
+                alert("Multumesc !");
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>
